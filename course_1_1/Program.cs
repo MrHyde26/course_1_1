@@ -10,14 +10,14 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-            short num1 = 10;
-            short num2 = 15;
+            int num1 = 55;
+            int num2 = 153;
 
             Console.WriteLine($"{num1} + {num2} = {Program.Sum(num1,num2)}");
             Console.ReadLine();
         }
 
-        static int Sum(int x, int y)
+        static long Sum(long x, long y)
         {
             return x + y;
         }
