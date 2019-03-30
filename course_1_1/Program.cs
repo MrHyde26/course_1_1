@@ -16,13 +16,12 @@ namespace course_1_1
             int myVar;
             int myVariab1e;
 
-           
+            double pi = 3.141592653;
+            decimal e = 2.7182818284590452m;
+            Console.WriteLine(pi);
+            Console.WriteLine(e);
         }
 
-        public static decimal PerformCalculation(int r)
-        {
-           
-            
-        }
+       
     }
 }
