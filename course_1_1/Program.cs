@@ -10,10 +10,21 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-            int num1 = 55;
-            int num2 = 153;
+            int i1 = 455;
+            int i2 = 84500;
+            decimal dec = 7.98845m;
 
-            Console.WriteLine($"{num1} + {num2} = {Program.Sum(num1,num2)}");
+            //
+            //Приводим два числа типа int к типу short. 
+            //
+            Console.WriteLine((short)i1);
+            Console.WriteLine((short)i2);
+
+
+            //
+            //Приводим два числа типа int к типу short. 
+            //
+            Console.WriteLine((int)dec);
             Console.ReadLine();
         }
 
