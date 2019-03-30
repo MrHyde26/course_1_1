@@ -10,7 +10,20 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            Console.WriteLine("Please enter a radius");
+            string rstring = Console.ReadLine();
+            int.TryParse(rstring, out int r);
+            Console.WriteLine($"The square of the round {Program.PerformCalculation(r)}");
+            
+        }
+
+        public static decimal PerformCalculation(int r)
+        {
+            const decimal Pi = 3.14m;
+            
+            decimal square = Pi * r * r;
+            return square;
+            
         }
     }
 }
