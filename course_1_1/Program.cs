@@ -27,7 +27,18 @@ namespace course_1_1
             Console.WriteLine(s1);
             Console.WriteLine(s2);
             Console.WriteLine(s3);
-            
+          
+            Console.WriteLine("Please enter a radius");
+            string rstr = Console.ReadLine();
+            int.TryParse(rstr, out int r);
+            Console.WriteLine($"The square of the round {Program.PerformCalculation(r)}");
+        }
+
+        public static decimal PerformCalculation(int r)
+        {
+            const decimal Pi = 3.14m;
+            decimal square = Pi * r * r;
+            return square;      
         }
 
        
