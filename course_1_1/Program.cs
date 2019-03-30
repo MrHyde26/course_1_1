@@ -20,6 +20,14 @@ namespace course_1_1
             decimal e = 2.7182818284590452m;
             Console.WriteLine(pi);
             Console.WriteLine(e);
+
+            string s1 = "\nмоя строка 1";
+            string s2 = "\tмоя строка 2";
+            string s3 = "\aмоя строка 3";
+            Console.WriteLine(s1);
+            Console.WriteLine(s2);
+            Console.WriteLine(s3);
+            
         }
 
        
