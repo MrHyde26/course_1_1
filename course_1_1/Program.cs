@@ -28,19 +28,20 @@ namespace course_1_1
             //Console.ReadLine();
 
             string astr = Console.ReadLine();
-            int.TryParse(astr, out int a);
+            Double.TryParse(astr, out double a);
             string bstr = Console.ReadLine();
-            int.TryParse(astr, out int b);
+            Double.TryParse(bstr, out double b);
             string cstr = Console.ReadLine();
-            int.TryParse(astr, out int c);
+            Double.TryParse(cstr, out double c);
 
             Console.WriteLine($"Result {Program.SArifm(a,b,c)}");
 
         }
 
-        public static int SArifm(int a,int b,int c)
+        public static double SArifm(double a, double b, double c)
             {
-            return (a*b*c)/3;
+           
+            return (double)(a+b+c)/3;
             }
 
 
