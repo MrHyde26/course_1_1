@@ -10,19 +10,16 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter a radius");
-            string rstr = Console.ReadLine();
-            int.TryParse(rstr, out int r);
-            Console.WriteLine($"The square of the round {Program.PerformCalculation(r)}");
-            
+            short num1 = 10;
+            short num2 = 15;
+
+            Console.WriteLine($"{num1} + {num2} = {Program.Sum(num1,num2)}");
+            Console.ReadLine();
         }
 
-        public static decimal PerformCalculation(int r)
+        static int Sum(int x, int y)
         {
-            const decimal Pi = 3.14m;
-            decimal square = Pi * r * r;
-            return square;
-            
+            return x + y;
         }
     }
 }
