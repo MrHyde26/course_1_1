@@ -13,7 +13,10 @@ namespace course_1_1
             //
             //HoursInDay();
             //
-            ABetweenC();
+            //
+            //ABetweenC();
+            //
+            OddThreeDigit();
         }
 
         public static void HoursInDay()
@@ -26,7 +29,7 @@ namespace course_1_1
         }
 
         public static void ABetweenC()
-            {
+        {
             Console.WriteLine("Enter A");
             int a = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter B");
@@ -42,6 +45,21 @@ namespace course_1_1
             {
                 Console.WriteLine("False");
             }
+        }
+
+        public static void OddThreeDigit()
+        {
+            string strthreedigit = Console.ReadLine();
+            int threedigit = Convert.ToInt32(strthreedigit);
+            if (threedigit%2==0 && strthreedigit.Length==3)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+
         }
     }
 }
