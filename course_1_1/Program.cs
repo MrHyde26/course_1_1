@@ -110,7 +110,6 @@ namespace course_1_1
                 case "/":
                     if (operand2 != 0)
                     {
-
                         result = operand1 / operand2;
                         Console.WriteLine($"Result {result}");
                     }
@@ -119,7 +118,6 @@ namespace course_1_1
                         Console.WriteLine( "Can't divided by zero");
                     }
                         break;
-
                 default:
                     break;
             }
