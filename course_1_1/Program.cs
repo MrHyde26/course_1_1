@@ -35,7 +35,10 @@ namespace course_1_1
             //Payment();
             //
             //
-            CalculatorWithRepeat();
+            //CalculatorWithRepeat();
+            //
+            //
+            Factorial();
             //
         }
 
@@ -297,12 +300,40 @@ namespace course_1_1
                         Console.WriteLine("Error");
                         break;
                     default:
-                        
                         break;
                 }
                 Console.WriteLine($"Please enter Y for repeat or another key for exit");
                 repeat = Console.ReadLine();
             } while (repeat == "Y");
+        }
+        //public static void DrowFigure()
+        //{
+        //    int length = 4;
+        //    int high = 10;
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        Console.Write("*");
+        //    }
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        Console.Write("*");
+        //        Console.Write("\n");
+        //        for (int j = 0; j < high; j++)
+        //        {
+        //            Console.Write("*");
+
+        //        }
+        //    }
+        //}
+        public static void Factorial()
+        {
+            int number = 5;
+            int fact = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                fact *= i;
+            }
+            Console.WriteLine(fact);
         }
     }
 }
