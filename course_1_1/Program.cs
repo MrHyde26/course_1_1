@@ -16,7 +16,12 @@ namespace course_1_1
             //
             //ABetweenC();
             //
-            OddThreeDigit();
+            //
+            //OddThreeDigit();
+            //
+            //
+            XYZ();
+            //
         }
 
         public static void HoursInDay()
@@ -59,7 +64,21 @@ namespace course_1_1
             {
                 Console.WriteLine("False");
             }
+        }
 
+        public static void XYZ()
+        {
+            int x = 10, y = 12, z = 3;
+            x += y - x++ * 2;
+            Console.WriteLine(x);
+            z = --x - y * 5;
+            Console.WriteLine(z);
+            y /= x + 5 % z;
+            Console.WriteLine(y);
+            z = x++ + y * 5;
+            Console.WriteLine(z);
+            x = y - x++ * 2;
+            Console.WriteLine(x);
         }
     }
 }
