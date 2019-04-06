@@ -26,7 +26,10 @@ namespace course_1_1
             //Calculator();
             //
             //
-            HittingGap();
+            //HittingGap();
+            //
+            //
+            Translate();
             //
         }
 
@@ -155,6 +158,32 @@ namespace course_1_1
             }
             Console.WriteLine(result);
 
+        }
+        public static void Translate()
+        {
+            Console.WriteLine("Enter word in russian");
+            string word = Console.ReadLine();
+            switch (word)
+            {
+                case "дождь":
+                    Console.WriteLine("rain");
+                    break;
+                case "ветер":
+                    Console.WriteLine("wind");
+                    break;
+                case "снег":
+                    Console.WriteLine("snow");
+                    break;
+                case "солнечно":
+                    Console.WriteLine("sunny");
+                    break;
+                case "облачно":
+                    Console.WriteLine("cloudy");
+                    break;
+                default:
+                    Console.WriteLine("This word is not on the dictionary");
+                    break;
+            }
         }
     }
 }
