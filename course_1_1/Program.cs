@@ -32,7 +32,10 @@ namespace course_1_1
             //Translate();
             //
             //
-            Payment();
+            //Payment();
+            //
+            //
+            CalculatorWithRepeat();
             //
         }
 
@@ -107,7 +110,7 @@ namespace course_1_1
                 case "+":
                     result = operand1 + operand2;
                     Console.WriteLine($"Result {result}");
-                break;
+                    break;
                 case "-":
                     result = operand1 - operand2;
                     Console.WriteLine($"Result {result}");
@@ -124,9 +127,9 @@ namespace course_1_1
                     }
                     else
                     {
-                        Console.WriteLine( "Can't divided by zero");
+                        Console.WriteLine("Can't divided by zero");
                     }
-                        break;
+                    break;
                 case " ":
                     Console.WriteLine("Error");
                     break;
@@ -137,11 +140,11 @@ namespace course_1_1
         public static void HittingGap()
         {
             Console.WriteLine("Enter number");
-            int number= Convert.ToInt32(Console.ReadLine());
-            string result ="";
+            int number = Convert.ToInt32(Console.ReadLine());
+            string result = "";
             if (0 <= number && number <= 14)
             {
-                result +="Number entered in gap 0-14";
+                result += "Number entered in gap 0-14";
             }
             if (15 <= number && number <= 35)
             {
@@ -157,7 +160,7 @@ namespace course_1_1
             }
             else
             {
-                 result += "Number doesnt enter into one interval";
+                result += "Number doesnt enter into one interval";
             }
             Console.WriteLine(result);
 
@@ -209,12 +212,12 @@ namespace course_1_1
             int experience = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter payment");
             double payment = Convert.ToInt32(Console.ReadLine());
-            double bonus=0;
+            double bonus = 0;
             if (experience < 5)
             {
-                bonus = payment*0.10;
+                bonus = payment * 0.10;
             }
-            if (experience >= 5 && experience<10)
+            if (experience >= 5 && experience < 10)
             {
                 bonus = payment * 0.15;
             }
@@ -238,5 +241,69 @@ namespace course_1_1
             Console.WriteLine($"Payment = {payment}$");
             Console.WriteLine($"Expetience = {experience} year");
         }
+        public static void CalculatorWithRepeat()
+        {
+            string repeat="";
+            do
+            {
+            Console.WriteLine("Enter first number");
+            string stroperand1= Console.ReadLine();
+                
+                int operand1;
+                if (!int.TryParse(stroperand1, out operand1))
+                {
+                    repeat = "Y";
+                    Console.WriteLine("Error. This not number. Please Enter number.");
+                    continue;
+                }
+                Console.WriteLine("Enter second number");
+                string stroperand2 = Console.ReadLine();
+                int operand2;
+                if (!int.TryParse(stroperand2, out operand2))
+                {
+                    repeat = "Y";
+                    Console.WriteLine("Error. This not number. Please Enter number.");
+                    continue;
+                }
+                Console.WriteLine("Enter arithmetic sign");
+            string sign = (Console.ReadLine());
+            int result;
+                switch (sign)
+                {
+                    case "+":
+                        result = operand1 + operand2;
+                        Console.WriteLine($"Result {result}");
+                        break;
+                    case "-":
+                        result = operand1 - operand2;
+                        Console.WriteLine($"Result {result}");
+                        break;
+                    case "*":
+                        result = operand1 * operand2;
+                        Console.WriteLine($"Result {result}");
+                        break;
+                    case "/":
+                        if (operand2 != 0)
+                        {
+                            result = operand1 / operand2;
+                            Console.WriteLine($"Result {result}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Can't divided by zero");
+                        }
+                        break;
+                    case " ":
+                        Console.WriteLine("Error");
+                        break;
+                    default:
+                        
+                        break;
+                }
+                Console.WriteLine($"Please enter Y for repeat or another key for exit");
+                repeat = Console.ReadLine();
+            } while (repeat == "Y");
+        }
     }
 }
+
