@@ -29,7 +29,10 @@ namespace course_1_1
             //HittingGap();
             //
             //
-            Translate();
+            //Translate();
+            //
+            //
+            Payment();
             //
         }
 
@@ -180,10 +183,60 @@ namespace course_1_1
                 case "облачно":
                     Console.WriteLine("cloudy");
                     break;
+                case "погода":
+                    Console.WriteLine("weather");
+                    break;
+                case "лето":
+                    Console.WriteLine("summer");
+                    break;
+                case "зима":
+                    Console.WriteLine("winter");
+                    break;
+                case "холодно":
+                    Console.WriteLine("cold");
+                    break;
+                case "жарко":
+                    Console.WriteLine("hot");
+                    break;
                 default:
                     Console.WriteLine("This word is not on the dictionary");
                     break;
             }
+        }
+        public static void Payment()
+        {
+            Console.WriteLine("Enter your work experience");
+            int experience = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter payment");
+            double payment = Convert.ToInt32(Console.ReadLine());
+            double bonus=0;
+            if (experience < 5)
+            {
+                bonus = payment*0.10;
+            }
+            if (experience >= 5 && experience<10)
+            {
+                bonus = payment * 0.15;
+            }
+            if (experience >= 10 && experience < 15)
+            {
+                bonus = payment * 0.25;
+            }
+            if (experience >= 15 && experience < 20)
+            {
+                bonus = payment * 0.35;
+            }
+            if (experience >= 20 && experience < 25)
+            {
+                bonus = payment * 0.45;
+            }
+            if (experience >= 25)
+            {
+                bonus = payment * 0.50;
+            }
+            Console.WriteLine($"Bonus = {bonus}$");
+            Console.WriteLine($"Payment = {payment}$");
+            Console.WriteLine($"Expetience = {experience} year");
         }
     }
 }
