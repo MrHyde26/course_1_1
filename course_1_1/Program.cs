@@ -10,14 +10,17 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-         
-            
+
+            Console.WriteLine("Please enter a seconds");
+            string strseconds = Console.ReadLine();
+            int.TryParse(strseconds, out int seconds);
+            Console.WriteLine($"Hours {Program.HoursInDay(seconds)}");
         }
 
-        public static int HoursInDay(int r)
+        public static int HoursInDay(int seconds)
         {
-            
-            
+            int hours = seconds / 3600;
+            return hours;
         }
     }
 }
