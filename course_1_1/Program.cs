@@ -10,17 +10,38 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
+            //
+            //HoursInDay();
+            //
+            ABetweenC();
+        }
 
+        public static void HoursInDay()
+        {
             Console.WriteLine("Please enter a seconds");
             string strseconds = Console.ReadLine();
             int.TryParse(strseconds, out int seconds);
-            Console.WriteLine($"Hours {Program.HoursInDay(seconds)}");
+            int hours = seconds / 3600;
+            Console.WriteLine($"Hours {hours}");
         }
 
-        public static int HoursInDay(int seconds)
-        {
-            int hours = seconds / 3600;
-            return hours;
+        public static void ABetweenC()
+            {
+            Console.WriteLine("Enter A");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter B");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter C");
+            int c = Convert.ToInt32(Console.ReadLine());
+
+            if (a < b && b < c)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
         }
     }
 }
