@@ -23,7 +23,10 @@ namespace course_1_1
             //XYZ();
             //
             //
-            Calculator();
+            //Calculator();
+            //
+            //
+            HittingGap();
             //
         }
 
@@ -118,9 +121,40 @@ namespace course_1_1
                         Console.WriteLine( "Can't divided by zero");
                     }
                         break;
+                case " ":
+                    Console.WriteLine("Error");
+                    break;
                 default:
                     break;
             }
+        }
+        public static void HittingGap()
+        {
+            Console.WriteLine("Enter number");
+            int number= Convert.ToInt32(Console.ReadLine());
+            string result ="";
+            if (0 <= number && number <= 14)
+            {
+                result +="Number entered in gap 0-14";
+            }
+            if (15 <= number && number <= 35)
+            {
+                result += "Number entered in gap 15-35";
+            }
+            if (36 <= number && number <= 50)
+            {
+                result += "Number entered in gap 36-50"; ;
+            }
+            if (50 <= number && number <= 100)
+            {
+                result += " Number entered in gap 50-100";
+            }
+            else
+            {
+                 result += "Number doesnt enter into one interval";
+            }
+            Console.WriteLine(result);
+
         }
     }
 }
