@@ -10,18 +10,13 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter a radius");
-            string rstr = Console.ReadLine();
-            int.TryParse(rstr, out int r);
-            Console.WriteLine($"The square of the round {Program.PerformCalculation(r)}");
+         
             
         }
 
-        public static decimal PerformCalculation(int r)
+        public static int HoursInDay(int r)
         {
-            const decimal Pi = 3.14m;
-            decimal square = Pi * r * r;
-            return square;
+            
             
         }
     }
