@@ -12,7 +12,7 @@ namespace course_1_1
         {
 
             //
-            WorkWithNumber();
+            //WorkWithNumber();
             //
             //
             //DelNumeral();
@@ -22,6 +22,9 @@ namespace course_1_1
             //
             //
             //Average();
+            //
+            //
+            RandomNumber();
             //
         }
         public static void WorkWithNumber()
@@ -149,6 +152,35 @@ namespace course_1_1
                     check = false;
                 }
             } while (check);
+           
+        }
+        public static void RandomNumber()
+        {
+            bool check = false;
+            int number = new Random().Next(1,100);
+            int ourNumber = 0;
+            
+            do
+            {
+                Console.WriteLine("Enter Number:");
+                ourNumber = Convert.ToInt32(Console.ReadLine());
+                if (ourNumber > number)
+                {
+                    Console.WriteLine("Less");
+                    check = true;
+                }
+                else if (ourNumber < number)
+                {
+                    Console.WriteLine("More");
+                    check = true;
+                }
+                else
+                {
+                    Console.WriteLine($"Congratulations! Random number is {number}");
+                    check = false;
+                }
+                
+            } while (check);         
         }
     }
 }
