@@ -12,7 +12,7 @@ namespace course_1_1
         {
 
             //
-            WorkWithNumber();
+            //WorkWithNumber();
             //
             //
             //DelNumeral();
@@ -28,6 +28,9 @@ namespace course_1_1
             //
             //
             //Exponentiation();
+            //
+            //
+            ProductRoute();
             //
         }
         public static void WorkWithNumber()
@@ -195,6 +198,19 @@ namespace course_1_1
                 result *= number;
             }   
             Console.WriteLine(result);
+        }
+        public static void ProductRoute()
+        {
+            Console.WriteLine("Add number of clients");
+            int clients = Convert.ToInt32(Console.ReadLine());
+            int n=1;
+            int result=1;
+            do
+            {
+                result *= n;
+                n++;
+            } while (n<=clients);
+            Console.WriteLine($"Number of possible routes: {result}");
         }
     }
 }
