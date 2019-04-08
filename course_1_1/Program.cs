@@ -11,10 +11,16 @@ namespace course_1_1
         static void Main(string[] args)
         {
 
-            WorkWithNumber();
+            //
+            //WorkWithNumber();
+            //
+            //
+            DelNumeral();
+            //
         }
         public static void WorkWithNumber()
         {
+            Console.WriteLine("Enter number");
             int number = Convert.ToInt32(Console.ReadLine());
             int counter = 0;
             string result = "";
@@ -51,6 +57,35 @@ namespace course_1_1
                 {
                     result += $"\nThe entered number is divisible by {setDivide[i]} without remainder";
                 }
+            }
+            Console.WriteLine(result);
+        }
+        public static void DelNumeral()
+        {
+            Console.WriteLine("Add number");
+            string strnumbeer = Console.ReadLine();
+            int number = Convert.ToInt32(strnumbeer);
+            int n;
+            string strnewNumb = "";
+            string result = "";
+            Console.WriteLine("Enter numeral for del");
+            int del = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < strnumbeer.Length; i++)
+            {
+                n = number % 10;
+                number /= 10;
+                if (n != del)
+                {
+                    strnewNumb += n.ToString();
+                }
+            }
+            int newNumb=Convert.ToInt32(strnewNumb);
+            for (int i = 0; i < strnewNumb.Length; i++)
+            {
+                n = newNumb % 10;
+                newNumb /= 10;
+                result += n.ToString();
+                
             }
             Console.WriteLine(result);
         }
