@@ -12,7 +12,7 @@ namespace course_1_1
         {
 
             //
-            //WorkWithNumber();
+            WorkWithNumber();
             //
             //
             //DelNumeral();
@@ -27,7 +27,7 @@ namespace course_1_1
             //RandomNumber();
             //
             //
-            Exponentiation();
+            //Exponentiation();
             //
         }
         public static void WorkWithNumber()
@@ -43,7 +43,7 @@ namespace course_1_1
                 {
                     if (number % i == 0) counter += 1;
                 }
-                if (counter == 2)
+                if (counter == 1)
                 {
                     result += "\nYou entered a prime number";
 
