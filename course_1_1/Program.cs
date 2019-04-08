@@ -18,7 +18,10 @@ namespace course_1_1
             //DelNumeral();
             //
             //
-            EvenNumbers();
+            //EvenNumbers();
+            //
+            //
+            Average();
             //
         }
         public static void WorkWithNumber()
@@ -109,6 +112,43 @@ namespace course_1_1
                 }
             }
             Console.WriteLine($"Including {counter} even numeral");
+        }
+        public static void Average()
+        {
+            bool check = false;
+            do
+            {
+                
+                Console.WriteLine("Add number A");
+                int numberA = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Add number B");
+                int numberB = Convert.ToInt32(Console.ReadLine());
+                if (numberA > numberB)
+                {
+                    Console.WriteLine("Initial number is greater than the final. Please try again");
+                    check = true;
+                    continue;
+                }
+                int sum = 0;
+                int counter = 0;
+                int average;
+                for (int i = numberA; i <= numberB; i++)
+                {
+                    sum += i;
+                    counter++;
+                }
+                average = sum / counter;
+                Console.WriteLine($"Average = {average} \nInput Y to repeat");
+                string repeat= Console.ReadLine();
+                if (repeat == "Y")
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+            } while (check);
         }
     }
 }
