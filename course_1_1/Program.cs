@@ -18,7 +18,6 @@ namespace course_1_1
             int number = Convert.ToInt32(Console.ReadLine());
             int counter = 0;
             string result = "";
-            int k;
             if (number > 0)
             {
                 result += "Your number is positive";
@@ -45,12 +44,12 @@ namespace course_1_1
             {
                 result += "\nYou entered not a prime number";
             }
-            int []mas=new int[] { 2, 3, 5, 6, 9 };
-            for (int i = 0; i < mas.Length; i++)
+            int []setDivide=new int[] { 2, 3, 5, 6, 9 };
+            for (int i = 0; i < setDivide.Length; i++)
             {
-                if (number % mas[i]==0)
+                if (number % setDivide[i]==0)
                 {
-                    result += $"\nThe entered number is divisible by {mas[i]} without remainder";
+                    result += $"\nThe entered number is divisible by {setDivide[i]} without remainder";
                 }
             }
             Console.WriteLine(result);
