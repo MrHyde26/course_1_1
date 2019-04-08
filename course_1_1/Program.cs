@@ -12,7 +12,7 @@ namespace course_1_1
         {
 
             //
-            //WorkWithNumber();
+            WorkWithNumber();
             //
             //
             //DelNumeral();
@@ -21,7 +21,7 @@ namespace course_1_1
             //EvenNumbers();
             //
             //
-            Average();
+            //Average();
             //
         }
         public static void WorkWithNumber()
@@ -33,28 +33,28 @@ namespace course_1_1
             if (number > 0)
             {
                 result += "Your number is positive";
+                for (int i = 1; i <= Math.Abs(number); i++)
+                {
+                    if (number % i == 0) counter += 1;
+                }
+                if (counter == 2)
+                {
+                    result += "\nYou entered a prime number";
+
+                }
+                else
+                {
+                    result += "\nYou entered not a prime number";
+                }
             }
             else if (number < 0)
             {
-                result += "Your number is negative";
-            }
-            else
-            {
-                result += "Your number is zero";
-            }
-
-            for (int i = 1; i <= Math.Abs(number); i++)
-            {
-                if (number % i==0) counter+=1;
-            }
-            if (counter == 2)
-            {
-                result += "\nYou entered a prime number";
+                result += "Your number is negative \nYou entered not a prime number";
                 
             }
             else
             {
-                result += "\nYou entered not a prime number";
+                result += "Your number is zero";
             }
             int []setDivide=new int[] { 2, 3, 5, 6, 9 };
             for (int i = 0; i < setDivide.Length; i++)
