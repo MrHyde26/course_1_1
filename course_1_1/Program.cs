@@ -24,7 +24,10 @@ namespace course_1_1
             //Average();
             //
             //
-            RandomNumber();
+            //RandomNumber();
+            //
+            //
+            Exponentiation();
             //
         }
         public static void WorkWithNumber()
@@ -36,7 +39,7 @@ namespace course_1_1
             if (number > 0)
             {
                 result += "Your number is positive";
-                for (int i = 1; i <= Math.Abs(number); i++)
+                for (int i = 2; i <= Math.Abs(number); i++)
                 {
                     if (number % i == 0) counter += 1;
                 }
@@ -159,7 +162,6 @@ namespace course_1_1
             bool check = false;
             int number = new Random().Next(1,100);
             int ourNumber = 0;
-            
             do
             {
                 Console.WriteLine("Enter Number:");
@@ -178,9 +180,21 @@ namespace course_1_1
                 {
                     Console.WriteLine($"Congratulations! Random number is {number}");
                     check = false;
-                }
-                
+                } 
             } while (check);         
+        }
+        public static void Exponentiation()
+        {
+            Console.WriteLine("Add number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Add exponent");
+            int exponent = Convert.ToInt32(Console.ReadLine());
+            int result=1;
+            for (int i = 1; i <= exponent; i++)
+            {
+                result *= number;
+            }   
+            Console.WriteLine(result);
         }
     }
 }
