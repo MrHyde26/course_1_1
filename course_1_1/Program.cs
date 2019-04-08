@@ -39,7 +39,7 @@ namespace course_1_1
             if (number > 0)
             {
                 result += "Your number is positive";
-                for (int i = 2; i <= Math.Abs(number); i++)
+                for (int i = 2; i <= number; i++)
                 {
                     if (number % i == 0) counter += 1;
                 }
