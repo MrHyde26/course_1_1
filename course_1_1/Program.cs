@@ -15,7 +15,10 @@ namespace course_1_1
             //WorkWithNumber();
             //
             //
-            DelNumeral();
+            //DelNumeral();
+            //
+            //
+            EvenNumbers();
             //
         }
         public static void WorkWithNumber()
@@ -89,6 +92,23 @@ namespace course_1_1
             }
             Console.WriteLine(result);
         }
-
+        public static void EvenNumbers()
+        {
+            Console.WriteLine("Add number");
+            string strnumbeer = Console.ReadLine();
+            int number = Convert.ToInt32(strnumbeer);
+            int n;
+            int counter = 0;
+            for (int i = 0; i < strnumbeer.Length; i++)
+            {
+                n = number % 10;
+                number /= 10;
+                if (n %2== 0)
+                {
+                    counter++;
+                }
+            }
+            Console.WriteLine($"Including {counter} even numeral");
+        }
     }
 }
