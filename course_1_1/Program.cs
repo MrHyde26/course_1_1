@@ -60,7 +60,10 @@ namespace course_1_1
             //ReverseNumber();
             //
             //
-            NumeralsOfNumber();
+            //NumeralsOfNumber();
+            //
+            //
+            HighestDigitOfNnumber();
             //
         }
         static void DrawPyramid()
@@ -548,6 +551,25 @@ namespace course_1_1
                 Console.WriteLine($"{n};");
             }
             
+        }
+        public static void HighestDigitOfNnumber()
+        {
+            Console.WriteLine("Add number");
+            string strnumbeer = Console.ReadLine();
+            int number = Convert.ToInt32(strnumbeer);
+            int n;
+            int max=0;
+            string strnewNumb = "";
+            for (int i = 0; i < strnumbeer.Length; i++)
+            {
+                n = number % 10;
+                number /= 10;
+                if (n > max)
+                {
+                    max = n;
+                }
+            }
+            Console.WriteLine($"Highest digit of number: {max}");
         }
     }
 }
