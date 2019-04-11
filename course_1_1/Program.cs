@@ -51,10 +51,13 @@ namespace course_1_1
             //SquareLessThanNumber();
             //
             //
-            SyracuseTheorem();
+            //SyracuseTheorem();
             //
             //
             //MileageSkier();
+            //
+            //
+            ReverseNumber();
             //
         }
         static void DrawPyramid()
@@ -140,8 +143,7 @@ namespace course_1_1
             {
                 n = newNumb % 10;
                 newNumb /= 10;
-                result += n.ToString();
-                
+                result += n.ToString();              
             }
             Console.WriteLine(result);
         }
@@ -505,6 +507,21 @@ namespace course_1_1
                 }
             }
             Console.WriteLine($"In {k} iterations we got 1");
+        }
+        public static void ReverseNumber()
+        {
+            Console.WriteLine("Enter number");
+            string strnumbeer = Console.ReadLine();
+            int number = Convert.ToInt32(strnumbeer);
+            int n;
+            string result = "";
+            for (int i = 0; i < strnumbeer.Length; i++)
+            {
+                n = number % 10;
+                number /= 10;
+                result += n.ToString();
+            }
+            Console.WriteLine(result);
         }
     }
 }
