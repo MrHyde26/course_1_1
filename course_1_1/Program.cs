@@ -48,7 +48,13 @@ namespace course_1_1
             //
             //BetweenNumbers();
             //
-            SquareLessThanNumber();
+            //SquareLessThanNumber();
+            //
+            //
+            SyracuseTheorem();
+            //
+            //
+            //MileageSkier();
             //
         }
         static void DrawPyramid()
@@ -479,6 +485,26 @@ namespace course_1_1
                 day++;
             }
             Console.WriteLine(day);
+        }
+        public static void SyracuseTheorem()
+        {
+            Console.WriteLine("Enter number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int k = 0;
+            while (number != 1)
+            {
+                if (number % 2 == 0)
+                {
+                    number = number / 2;
+                    k++;
+                }
+                else
+                {
+                    number = ((number * 3) + 1);
+                    k++;
+                }
+            }
+            Console.WriteLine($"In {k} iterations we got 1");
         }
     }
 }
