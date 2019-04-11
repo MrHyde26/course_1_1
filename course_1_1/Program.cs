@@ -63,7 +63,10 @@ namespace course_1_1
             //NumeralsOfNumber();
             //
             //
-            HighestDigitOfNnumber();
+            //HighestDigitOfNnumber();
+            //
+            //
+            UnsignedMultiplication();
             //
         }
         static void DrawPyramid()
@@ -550,7 +553,6 @@ namespace course_1_1
                 newNumb /= 10;
                 Console.WriteLine($"{n};");
             }
-            
         }
         public static void HighestDigitOfNnumber()
         {
@@ -570,6 +572,20 @@ namespace course_1_1
                 }
             }
             Console.WriteLine($"Highest digit of number: {max}");
+        }
+        public static void UnsignedMultiplication()
+        {
+            Console.WriteLine("Add number A");
+            int numberA = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Add number B");
+            int numberB = Convert.ToInt32(Console.ReadLine());
+            int result=0;
+            for (int i = 0; i < Math.Abs(numberB); i++)
+            {
+                result += Math.Abs(numberA);
+            }
+            if (numberA < 0 ^ numberB<0) result*=-1;
+            Console.WriteLine($"Result: {result}");
         }
     }
 }
