@@ -467,5 +467,18 @@ namespace course_1_1
                 }
             }
         }
+        public static void MileageSkier()
+        {
+            double mileage = 10;
+            double result = 10;
+            int day = 1;
+            while (result <= 100)
+            {
+                mileage = mileage * 1.1;
+                result += mileage;
+                day++;
+            }
+            Console.WriteLine(day);
+        }
     }
 }
