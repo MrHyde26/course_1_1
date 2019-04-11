@@ -57,7 +57,10 @@ namespace course_1_1
             //MileageSkier();
             //
             //
-            ReverseNumber();
+            //ReverseNumber();
+            //
+            //
+            NumeralsOfNumber();
             //
         }
         static void DrawPyramid()
@@ -492,21 +495,21 @@ namespace course_1_1
         {
             Console.WriteLine("Enter number");
             int number = Convert.ToInt32(Console.ReadLine());
-            int k = 0;
+            int iteration = 0;
             while (number != 1)
             {
                 if (number % 2 == 0)
                 {
                     number = number / 2;
-                    k++;
+                    iteration++;
                 }
                 else
                 {
                     number = ((number * 3) + 1);
-                    k++;
+                    iteration++;
                 }
             }
-            Console.WriteLine($"In {k} iterations we got 1");
+            Console.WriteLine($"In {iteration} iterations we got 1");
         }
         public static void ReverseNumber()
         {
@@ -522,6 +525,29 @@ namespace course_1_1
                 result += n.ToString();
             }
             Console.WriteLine(result);
+        }
+        public static void NumeralsOfNumber()
+        {
+            Console.WriteLine("Add number");
+            string strnumbeer = Console.ReadLine();
+            int number = Convert.ToInt32(strnumbeer);
+            int n;
+            string strnewNumb = "";
+            for (int i = 0; i < strnumbeer.Length; i++)
+            {
+                n = number % 10;
+                number /= 10;
+                    strnewNumb += n.ToString();
+            }
+            int newNumb = Convert.ToInt32(strnewNumb);
+            Console.WriteLine($"Numberals in number {strnumbeer}");
+            for (int i = 0; i < strnewNumb.Length; i++)
+            {
+                n = newNumb % 10;
+                newNumb /= 10;
+                Console.WriteLine($"{n};");
+            }
+            
         }
     }
 }
