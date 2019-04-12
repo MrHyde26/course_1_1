@@ -66,26 +66,14 @@ namespace course_1_1
             //HighestDigitOfNnumber();
             //
             //
-            UnsignedMultiplication();
+            //UnsignedMultiplication();
             //
-        }
-        static void DrawPyramid()
-        {
-            int n = 5;
-            int m = 5;
-            for (int i = 1; i <= n; i++)
-            {
-                for (int j = i; j <= m; j++)
-                {
-                    Console.Write("  ");
-                }
-                for (int k = 1; k <= 2 * i - 1; k++)
-                {
-                    Console.Write("*" + " ");
-                }
-                Console.WriteLine();
-            }
-        }
+            //
+            DrowFigure();
+            //
+            //
+            //SumRow();
+        } 
         public static void WorkWithNumber()
         {
             Console.WriteLine("Enter number");
@@ -266,8 +254,8 @@ namespace course_1_1
         }
         public static void DrowFigure()
         {
-            int length = 8;
-            int high = 9;
+            Console.WriteLine("Enter a length of the side");
+            int length = Convert.ToInt32(Console.ReadLine());
             //
             //line
             //
@@ -282,7 +270,7 @@ namespace course_1_1
             for (int i = 0; i < length; i++)
             {
                 Console.Write("\n*");
-                for (int j = 0; j < high - 1; j++)
+                for (int j = 0; j < length - 1; j++)
                 {
                     if (j < i)
                     {
@@ -301,9 +289,9 @@ namespace course_1_1
             for (int i = 0; i < length; i++)
             {
                 Console.Write("\n*");
-                for (int j = 0; j < high - 1; j++)
+                for (int j = 0; j < length - 1; j++)
                 {
-                    if (i == 0 || i == length - 1 || j == high - 2)
+                    if (i == 0 || i == length - 1 || j == length - 2)
                     {
                         Console.Write("*");
                     }
@@ -320,7 +308,7 @@ namespace course_1_1
             for (int i = 0; i < length; i++)
             {
                 Console.Write("\n*");
-                for (int j = 0; j < high - 1; j++)
+                for (int j = 0; j < length - 1; j++)
                     //{
                     Console.Write("*");
             }
@@ -332,7 +320,7 @@ namespace course_1_1
             {
                 Console.Write("\n*");
 
-                for (int j = 0; j < high - 1; j++)
+                for (int j = 0; j < length - 1; j++)
                 {
                     if (i > j)
                     {
@@ -344,6 +332,32 @@ namespace course_1_1
                         {
                             Console.Write(" ");
                         }
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+            }
+            Console.WriteLine();
+            //
+            //equilateral triangle with frames
+            //
+            for (int i = 0; i < length; i++)
+            {
+                if (i == length - 1)
+                {
+                    Console.Write("\n*");
+                }
+                else
+                {
+                    Console.Write("\n ");
+                }
+                for (int j = 0; j < length * 2 - 2; j++)
+                {
+                    if ( i == length - 1 ||  (length - i - 2<=j && i + length - 2>=j))
+                    {
+                        Console.Write("*");
                     }
                     else
                     {
@@ -365,9 +379,9 @@ namespace course_1_1
                 {
                     Console.Write("\n ");
                 }
-                for (int j = 0; j < high - 1; j++)
+                for (int j = 0; j < length * 2 - 2; j++)
                 {
-                    if (i == length - 1 || j == high / 2)
+                    if (length - i - 2 == j || i + length - 2 == j || i == length - 1)
                     {
                         Console.Write("*");
                     }
@@ -377,6 +391,7 @@ namespace course_1_1
                     }
                 }
             }
+            Console.WriteLine();
         }
         public static void FibonachiNumberLessThan()
         {
@@ -427,7 +442,6 @@ namespace course_1_1
             double number = Convert.ToDouble(Console.ReadLine());
             double newNumber = 1;
             double result = 0;
-            string str = "";
             for (double i = 1; i <= number; i++)
             {
                 for (double j = 1; j <= i; j++)
@@ -435,11 +449,9 @@ namespace course_1_1
                     newNumber *= -2;
                 }
                 result += (-1) * i / newNumber;
-                str += ($" {i} / {newNumber}").ToString();
                 newNumber = 1;
-                Console.WriteLine(result);
             }
-            Console.WriteLine(str);
+            Console.WriteLine($"Result {result}");
         }
         public static void BetweenNumbers()
         {
