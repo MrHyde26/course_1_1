@@ -49,7 +49,7 @@ namespace course_1_1
                     odd += $"{mass[i]} ";
                 }
             }
-            average = average / (n - 1);
+            average = average /n;
             Console.WriteLine($"\nMax - {max}");
             Console.WriteLine($"Min - {min}");
             Console.WriteLine($"Average - {average}");
