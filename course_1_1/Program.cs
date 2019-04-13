@@ -17,10 +17,20 @@ namespace course_1_1
 
             //
             //IndexArray();
-            MoreThanAvarage();
+            //MoreThanAvarage();
+            Console.WriteLine("Enter size of massive");
+            int n = Convert.ToInt32(Console.ReadLine());
+            var array= Program.GetArray(n);
+
+            foreach (var item in array)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
+            MyReverse(array);
+
         }
-
-
         public static void WorkWithMass()
         {
             Console.WriteLine("Enter size of massive");
@@ -64,6 +74,7 @@ namespace course_1_1
             Console.WriteLine($"Sum - {sum}");
             Console.WriteLine(odd);
         }
+
         public static void DelDuplicate()
         {
             Console.WriteLine("Enter size of massive");
@@ -104,6 +115,7 @@ namespace course_1_1
                 Console.Write($"{item} ");
             }
         }
+
         public static void IndexArray()
         {
             Console.WriteLine("Enter size of massive");
@@ -129,6 +141,7 @@ namespace course_1_1
                 }
             }
         }
+
         public static void MoreThanAvarage()
         {
             Console.WriteLine("Enter size of massive");
@@ -159,6 +172,32 @@ namespace course_1_1
                 }
             }
             Console.WriteLine(moreThanAvarage);
+        }
+
+        private static int[] GetArray(int count)
+        {
+            int[] array = new int[count];
+            Random rand = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rand.Next(0, 100);
+            }
+            return array;
+        }
+
+        public static void MyReverse(int []array)
+        {
+            var reverseArray = new int[array.Length];
+            for (int i = array.Length-1; i >= 0; i--)
+            { 
+                reverseArray[array.Length-(i+1)] = array[i];
+            }
+
+            foreach (var item in reverseArray)
+            {
+                Console.Write($"{item} ");
+            }
         }
     }
 }
