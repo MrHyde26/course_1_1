@@ -16,8 +16,10 @@ namespace course_1_1
             //DelDuplicate();
 
             //
-            IndexArray();
+            //IndexArray();
+            MoreThanAvarage();
         }
+
 
         public static void WorkWithMass()
         {
@@ -70,11 +72,9 @@ namespace course_1_1
             Random rand = new Random();
             int counter = 0;
 
-            int[] newArray = new int [n];
-
             for (int i = 0; i < n; i++)
             {
-                mass[i] = rand.Next(0, 100);
+                mass[i] = rand.Next(0, 15);
                 Console.Write($"{mass[i]} ");
             }
 
@@ -82,20 +82,17 @@ namespace course_1_1
             {
                 for (int j = 0; j < mass.Length - 1; j++)
                 {
-                    if (mass[j] > mass[j + 1])
-                    {
-                        int z = mass[j];
-                        mass[j] = mass[j + 1];
-                        mass[j + 1] = z;
-                    }
-                    if (mass[j] == mass[j + 1])
+                    if (mass[j] != mass[j + 1])
                     {
                         counter++;
                     }
                 }
             }
+            int[] newArray = new int[counter];
+            Console.WriteLine();
             Console.WriteLine($"\n{counter}");
-            for (int i = 0; i < mass.Length; i++)
+            Console.WriteLine();
+            for (int i =0; i < mass.Length; i++)
             {
                 if (mass[i] != mass[i + 1])
                 {
@@ -104,7 +101,7 @@ namespace course_1_1
             }
             foreach (var item in newArray)
             {
-                Console.WriteLine($"{item}");
+                Console.Write($"{item} ");
             }
         }
         public static void IndexArray()
@@ -131,6 +128,37 @@ namespace course_1_1
                     Console.Write($"\n{i}");
                 }
             }
+        }
+        public static void MoreThanAvarage()
+        {
+            Console.WriteLine("Enter size of massive");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] mass = new int[n];
+            int average = 0;
+            string moreThanAvarage = "More Than Avarage: ";
+            Random rand = new Random();
+
+            for (int i = 0; i < n; i++)
+            {
+                mass[i] = rand.Next(0, 100);
+                Console.Write($"{mass[i]} ");
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                average += mass[i];
+            }
+            average = average / n;
+            Console.WriteLine($"\nAverage: {average}");
+
+            for (int i = 0; i < n; i++)
+            {
+                if (average < mass[i])
+                {
+                    moreThanAvarage += $"{mass[i]} ";
+                }
+            }
+            Console.WriteLine(moreThanAvarage);
         }
     }
 }
