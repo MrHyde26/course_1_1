@@ -26,6 +26,7 @@ namespace course_1_1
             for (int i = 0; i < n; i++)
             {
                 mass[i] = rand.Next(0, 100);
+                Console.Write($"{mass[i]} ");
             }
 
             int max = mass[0];
@@ -33,7 +34,6 @@ namespace course_1_1
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write($"{mass[i]} ");
                 if (max < mass[i])
                 {
                     max = mass[i];
