@@ -20,15 +20,22 @@ namespace course_1_1
             //MoreThanAvarage();
             Console.WriteLine("Enter size of massive");
             int n = Convert.ToInt32(Console.ReadLine());
-            var array= Program.GetArray(n);
 
-            foreach (var item in array)
-            {
-                Console.Write($"{item} ");
-            }
+            //foreach (var item in array)
+            //{
+            //    Console.Write($"{item} ");
+            //}
+
+            Console.WriteLine("Enter index");
+            int index = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Count");
+            int count = Convert.ToInt32(Console.ReadLine());
+
+            var array = Program.GetArray(n);
 
             Console.WriteLine();
             MyReverse(array);
+            SubArray(array, index, count);
 
         }
         public static void WorkWithMass()
@@ -197,6 +204,14 @@ namespace course_1_1
             foreach (var item in reverseArray)
             {
                 Console.Write($"{item} ");
+            }
+        }
+        public static void SubArray(int[] array, int index, int count)
+        {
+            var subArray = new int[array.Length];
+            for (int i = index; i < index+count; i++)
+            {
+                subArray[i] = array[i];
             }
         }
     }
