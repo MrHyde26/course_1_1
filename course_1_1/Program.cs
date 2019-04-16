@@ -21,20 +21,18 @@ namespace course_1_1
             Console.WriteLine("Enter size of massive");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            //foreach (var item in array)
-            //{
-            //    Console.Write($"{item} ");
-            //}
-
             Console.WriteLine("Enter index");
             int index = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Count");
             int count = Convert.ToInt32(Console.ReadLine());
 
             var array = Program.GetArray(n);
-
+            foreach (var item in array)
+            {
+                Console.Write($"{item} ");
+            }
             Console.WriteLine();
-            MyReverse(array);
+            //MyReverse(array);
             SubArray(array, index, count);
 
         }
@@ -208,10 +206,23 @@ namespace course_1_1
         }
         public static void SubArray(int[] array, int index, int count)
         {
-            var subArray = new int[array.Length];
-            for (int i = index; i < index+count; i++)
+            var subArray = new int[count];
+            for (int i = index, k=0; k < count && i < array.Length; i++, k++)
             {
-                subArray[i] = array[i];
+                    subArray[k] = array[i];
+            }
+
+            for (int k = 0; k < count; k++)
+            {
+                if (k >= (array.Length - index))
+                {
+                    subArray[k] = 1;
+                }
+            }
+
+            foreach (var item in subArray)
+            {
+                Console.Write($"{item} ");
             }
         }
     }
