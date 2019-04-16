@@ -18,16 +18,21 @@ namespace course_1_1
             //
             //IndexArray();
             //MoreThanAvarage();
-            Console.WriteLine("Enter size of massive");
-            int n = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter size of massive");
+            //int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter rows");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter columns");
+            int columns = Convert.ToInt32(Console.ReadLine());
 
             //Console.WriteLine("Enter index");
             //int index = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("Enter Count");
             //int count = Convert.ToInt32(Console.ReadLine());
-            
 
-            var array = Program.GetArray(n);
+
+            //var array = Program.GetArray(n);
 
             //MyReverse(array);
             //SubArray(array, index, count);
@@ -35,16 +40,31 @@ namespace course_1_1
             //Console.WriteLine("Enter new element of array");        
             //int value = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter element");
-            int x = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter element");
+            //int x = Convert.ToInt32(Console.ReadLine());
 
-            foreach (var item in array)
+            var array2 = Program.GetArray2(rows, columns);
+            for (int i = 0; i < rows; i++)
             {
-                Console.Write($"{item} ");
+                Console.WriteLine("\n");
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write ($"{array2[i, j]} ");
+                }
             }
+
+            ReverseRows(array2);
+
+            //foreach (var item in array)
+            //{
+            //    Console.Write($"{item} ");
+            //}
+            //Console.WriteLine();
+
+
             Console.WriteLine();
             //IncreaseLength(array, value);
-            FoundInArray(array, x);
+            //FoundInArray(array, x);
 
         }
         public static void WorkWithMass()
@@ -202,6 +222,21 @@ namespace course_1_1
             return array;
         }
 
+        private static int[,] GetArray2(int rows,int columns)
+        {
+            int[,] array = new int[rows, columns];
+            Random rand = new Random();
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    array[i,j] = rand.Next(0, 100);
+                }
+            }
+            return array;
+        }
+
         public static void MyReverse(int []array)
         {
             var reverseArray = new int[array.Length];
@@ -272,6 +307,31 @@ namespace course_1_1
             else
             {
                 Console.WriteLine($"{x} not found");
+            }
+        }
+
+        public static void ReverseRows(int[,] array)
+        {
+            Console.WriteLine("\nEnter first row for reverse");
+            int firstRow = Convert.ToInt32(Console.ReadLine())-1;
+            Console.WriteLine("Enter secont row for reverse");
+            int secondRow = Convert.ToInt32(Console.ReadLine())-1;
+            int reverse=0;
+
+               for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    reverse=array[firstRow, j];
+                    array[firstRow, j] = array[secondRow, j];
+                    array[secondRow, j] = reverse;
+                }
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                Console.WriteLine("\n");
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    Console.Write($"{array[i, j]} ");
+                }
             }
         }
     }
