@@ -21,19 +21,27 @@ namespace course_1_1
             Console.WriteLine("Enter size of massive");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter index");
-            int index = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Count");
-            int count = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter index");
+            //int index = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter Count");
+            //int count = Convert.ToInt32(Console.ReadLine());
+            
 
             var array = Program.GetArray(n);
+
+            //MyReverse(array);
+            //SubArray(array, index, count);
+
+            Console.WriteLine("Enter new element of array");
+            int value = Convert.ToInt32(Console.ReadLine());
+            
+
             foreach (var item in array)
             {
                 Console.Write($"{item} ");
             }
             Console.WriteLine();
-            //MyReverse(array);
-            SubArray(array, index, count);
+            IncreaseLength(array, value);
 
         }
         public static void WorkWithMass()
@@ -225,5 +233,22 @@ namespace course_1_1
                 Console.Write($"{item} ");
             }
         }
+
+        public static void IncreaseLength(int[] array, int value)
+        {
+            var newArray = new int[array.Length+1];
+            newArray[0] = value;
+            for (int i = 1; i < newArray.Length; i++)
+            {
+                newArray[i] = array[i-1];
+            }
+
+            foreach (var item in newArray)
+            {
+                Console.Write($"{item} ");
+            }
+
+        }
+
     }
 }
