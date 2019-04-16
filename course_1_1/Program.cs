@@ -32,16 +32,19 @@ namespace course_1_1
             //MyReverse(array);
             //SubArray(array, index, count);
 
-            Console.WriteLine("Enter new element of array");
-            int value = Convert.ToInt32(Console.ReadLine());
-            
+            //Console.WriteLine("Enter new element of array");        
+            //int value = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter element");
+            int x = Convert.ToInt32(Console.ReadLine());
 
             foreach (var item in array)
             {
                 Console.Write($"{item} ");
             }
             Console.WriteLine();
-            IncreaseLength(array, value);
+            //IncreaseLength(array, value);
+            FoundInArray(array, x);
 
         }
         public static void WorkWithMass()
@@ -250,5 +253,26 @@ namespace course_1_1
 
         }
 
+        public static void FoundInArray(int[] array, int x)
+        {
+            int count = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == x)
+                {
+                    count++;
+                }
+            }
+
+            if (count > 0)
+            {
+                Console.WriteLine($"{x} occurs in the array {count} times");
+            }
+            else
+            {
+                Console.WriteLine($"{x} not found");
+            }
+        }
     }
 }
