@@ -16,7 +16,11 @@ namespace course_1_1
 
             //String4();
 
-            String5();
+            //String5();
+
+            //String6();
+
+            String7();
 
 
         }
@@ -101,6 +105,39 @@ namespace course_1_1
                 { 
                 result += strArray[i]+ " ";
                 }
+            }
+            result = result.Trim();
+
+            Console.WriteLine(result);
+        }
+
+        public static void String6()
+        {
+            Console.WriteLine("Add text line");
+            string text = Console.ReadLine();
+            Console.WriteLine("Enter position");
+            int position = Convert.ToInt32(Console.ReadLine());
+            var strArray = text.Split(' ');
+            string word = "";
+
+            for (int i = 0; i < strArray.Length; i++)
+            {
+                word = strArray[position-1];
+            }
+
+            Console.WriteLine(word[0]);
+        }
+
+        public static void String7()
+        {
+            Console.WriteLine("Add text line");
+            string text = Console.ReadLine();
+            var strArray = text.Split(' ');
+            string result = "";
+
+            for (int i = strArray.Length-1; i>= 0; i--)
+            {
+                result += strArray[i] + " ";
             }
             result = result.Trim();
 
