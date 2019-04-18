@@ -12,7 +12,9 @@ namespace course_1_1
         {
             //ArrayUnpacking();
 
-            PerfectNumber();
+            //PerfectNumber();
+
+            ArrayStore();
 
 
         }
@@ -63,6 +65,38 @@ namespace course_1_1
                 if (sum == i)
                 {
                     Console.WriteLine($"Perfect Number: {sum}");
+                }
+            }
+        }
+
+        public static void ArrayStore()
+        {
+            string[] products = new string[] {"Milk", "Apple", "Chease", "Egg"};
+            double[] prices = new double[] {10.15, 25.30, 15.20, 10};
+            int quantity = 0;
+            int number = 0;
+            double result = 0;
+
+            for (int i = 0; i < products.Length; i++)
+            {
+                Console.WriteLine($"{i+1}) {products[i]} - {prices[i]} hrn");
+            }
+
+            for (int i = 0; ; i++)
+            {
+                Console.WriteLine("Product");
+                number = Convert.ToInt32(Console.ReadLine());
+                
+                if (number != 0)
+                {
+                    Console.WriteLine("Quantity");
+                    quantity = Convert.ToInt32(Console.ReadLine());
+                    result += prices[number-1] * quantity;
+                }
+                else
+                {
+                    Console.WriteLine($"Sum: {Convert.ToDouble(result)} hrn");
+                    break;
                 }
             }
         }
