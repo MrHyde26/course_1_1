@@ -10,7 +10,11 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-            ArrayUnpacking();
+            //ArrayUnpacking();
+
+            PerfectNumber();
+
+
         }
         public static void ArrayUnpacking()
         {
@@ -23,12 +27,11 @@ namespace course_1_1
                 array[i] = rand.Next(0, 2);
                 Console.Write(array[i]);
             }
-            Console.WriteLine();
 
-
+            Console.WriteLine("\nResult");
             for (int i = 0; i < array.Length; i++)
             {
-                   for (int j = 0; j < array[i]; j++)
+                   for (int j = 1; j < array[i]; j++)
                     {
                         if (i % 2 == 0)
                         {
@@ -39,8 +42,29 @@ namespace course_1_1
                             Console.Write(1);
                         }
                     }
-                
             }           
+        }
+
+        public static void PerfectNumber()
+        {
+            int sum = 0;
+
+            for (int i = 1; i <= 1000; i++)
+            {
+                sum = 0;
+                for (int j = 1; j < i; j++)
+                {
+                    if (i%j==0)
+                    {
+                        sum += j;
+                    }
+                }
+
+                if (sum == i)
+                {
+                    Console.WriteLine($"Perfect Number: {sum}");
+                }
+            }
         }
     }
 }
