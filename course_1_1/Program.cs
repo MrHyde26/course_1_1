@@ -10,594 +10,121 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
+            //PerfectNumber();
 
-            //
-            //WorkWithNumber();
-            //
-            //
-            //DelNumeral();
-            //
-            //
-            //EvenNumbers();
-            //
-            //
-            //Average();
-            //
-            //
-            //RandomNumber();
-            //
-            //
-            //Exponentiation();
-            //
-            //
-            //ProductRoute();
-            //
-            //
-            //DrowFigure();
-            //
-            //
-            //FibonachiNumberLessThan();
-            //
-            //
-            //FirstNumbersFibonachi();
-            //
-            //////////DrawPyramid();
-            //
-            //
-            //SumRow();
-            //
-            //BetweenNumbers();
-            //
-            //SquareLessThanNumber();
-            //
-            //
-            //SyracuseTheorem();
-            //
-            //
-            //MileageSkier();
-            //
-            //
-            //ReverseNumber();
-            //
-            //
-            //NumeralsOfNumber();
-            //
-            //
-            //HighestDigitOfNnumber();
-            //
-            //
-            //UnsignedMultiplication();
-            //
-            //
-            DrowFigure();
-            //
-            //
-            //SumRow();
-        } 
-        public static void WorkWithNumber()
-        {
-            Console.WriteLine("Enter number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int counter = 0;
-            string result = "";
-            if (number > 0)
-            {
-                result += "Your number is positive";
-                for (int i = 2; i <= number; i++)
-                {
-                    if (number % i == 0) counter += 1;
-                }
-                if (counter == 1)
-                {
-                    result += "\nYou entered a prime number";
+            //ArrayUnpacking();
 
-                }
-                else
-                {
-                    result += "\nYou entered not a prime number";
-                }
-            }
-            else if (number < 0)
-            {
-                result += "Your number is negative \nYou entered not a prime number";
-                
-            }
-            else
-            {
-                result += "Your number is zero";
-            }
-            int []setDivide=new int[] { 2, 3, 5, 6, 9 };
-            for (int i = 0; i < setDivide.Length; i++)
-            {
-                if (number % setDivide[i]==0)
-                {
-                    result += $"\nThe entered number is divisible by {setDivide[i]} without remainder";
-                }
-            }
-            Console.WriteLine(result);
-        }
-        public static void DelNumeral()
-        {
-            Console.WriteLine("Add number");
-            string strnumbeer = Console.ReadLine();
-            int number = Convert.ToInt32(strnumbeer);
-            int n;
-            string strnewNumb = "";
-            string result = "";
-            Console.WriteLine("Enter numeral for del");
-            int del = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < strnumbeer.Length; i++)
-            {
-                n = number % 10;
-                number /= 10;
-                if (n != del)
-                {
-                    strnewNumb += n.ToString();
-                }
-            }
-            int newNumb=Convert.ToInt32(strnewNumb);
-            for (int i = 0; i < strnewNumb.Length; i++)
-            {
-                n = newNumb % 10;
-                newNumb /= 10;
-                result += n.ToString();              
-            }
-            Console.WriteLine(result);
-        }
-        public static void EvenNumbers()
-        {
-            Console.WriteLine("Add number");
-            string strnumbeer = Console.ReadLine();
-            int number = Convert.ToInt32(strnumbeer);
-            int n;
-            int counter = 0;
-            for (int i = 0; i < strnumbeer.Length; i++)
-            {
-                n = number % 10;
-                number /= 10;
-                if (n %2== 0)
-                {
-                    counter++;
-                }
-            }
-            Console.WriteLine($"Including {counter} even numeral");
-        }
-        public static void Average()
-        {
-            bool check = false;
-            do
-            {
-                
-                Console.WriteLine("Add number A");
-                int numberA = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Add number B");
-                int numberB = Convert.ToInt32(Console.ReadLine());
-                if (numberA > numberB)
-                {
-                    Console.WriteLine("Initial number is greater than the final. Please try again");
-                    check = true;
-                    continue;
-                }
-                int sum = 0;
-                int counter = 0;
-                int average;
-                for (int i = numberA; i <= numberB; i++)
-                {
-                    sum += i;
-                    counter++;
-                }
-                average = sum / counter;
-                Console.WriteLine($"Average = {average} \nInput Y to repeat");
-                string repeat= Console.ReadLine();
-                if (repeat == "Y")
-                {
-                    check = true;
-                }
-                else
-                {
-                    check = false;
-                }
-            } while (check);
-           
-        }
-        public static void RandomNumber()
-        {
-            bool check = false;
-            int number = new Random().Next(1,100);
-            int ourNumber = 0;
-            do
-            {
-                Console.WriteLine("Enter Number:");
-                ourNumber = Convert.ToInt32(Console.ReadLine());
-                if (ourNumber > number)
-                {
-                    Console.WriteLine("Less");
-                    check = true;
-                }
-                else if (ourNumber < number)
-                {
-                    Console.WriteLine("More");
-                    check = true;
-                }
-                else
-                {
-                    Console.WriteLine($"Congratulations! Random number is {number}");
-                    check = false;
-                } 
-            } while (check);         
-        }
-        public static void Exponentiation()
-        {
-            Console.WriteLine("Add number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Add exponent");
-            int exponent = Convert.ToInt32(Console.ReadLine());
-            int result=1;
-            for (int i = 1; i <= exponent; i++)
-            {
-                result *= number;
-            }   
-            Console.WriteLine(result);
-        }
-        public static void ProductRoute()
-        {
-            Console.WriteLine("Add number of clients");
-            int clients = Convert.ToInt32(Console.ReadLine());
-            int n=1;
-            int result=1;
-            do
-            {
-                result *= n;
-                n++;
-            } while (n<=clients);
-            Console.WriteLine($"Number of possible routes: {result}");
-        }
-        public static void DrowFigure()
-        {
-            Console.WriteLine("Enter a length of the side");
-            int length = Convert.ToInt32(Console.ReadLine());
-            //
-            //line
-            //
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write("*");
-            }
-            Console.WriteLine();
-            //
-            //right triangle
-            //
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write("\n*");
-                for (int j = 0; j < length - 1; j++)
-                {
-                    if (j < i)
-                    {
-                        Console.Write("*");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-            }
-            Console.WriteLine();
-            //
-            //rectangle with frames
-            //
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write("\n*");
-                for (int j = 0; j < length - 1; j++)
-                {
-                    if (i == 0 || i == length - 1 || j == length - 2)
-                    {
-                        Console.Write("*");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-            }
-            Console.WriteLine();
-            //
-            //rectangle 
-            //
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write("\n*");
-                for (int j = 0; j < length - 1; j++)
-                    //{
-                    Console.Write("*");
-            }
-            Console.WriteLine();
-            //
-            //right triangle with frames
-            //
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write("\n*");
+            //ArrayStore();
 
-                for (int j = 0; j < length - 1; j++)
-                {
-                    if (i > j)
-                    {
-                        if (j == i - 1 || i == length - 1)
-                        {
-                            Console.Write("*");
-                        }
-                        else
-                        {
-                            Console.Write(" ");
-                        }
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-            }
-            Console.WriteLine();
-            //
-            //equilateral triangle with frames
-            //
-            for (int i = 0; i < length; i++)
-            {
-                if (i == length - 1)
-                {
-                    Console.Write("\n*");
-                }
-                else
-                {
-                    Console.Write("\n ");
-                }
-                for (int j = 0; j < length * 2 - 2; j++)
-                {
-                    if ( i == length - 1 ||  (length - i - 2<=j && i + length - 2>=j))
-                    {
-                        Console.Write("*");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-            }
-            Console.WriteLine();
-            //
-            //equilateral triangle
-            //
-            for (int i = 0; i < length; i++)
-            {
-                if (i == length - 1)
-                {
-                    Console.Write("\n*");
-                }
-                else
-                {
-                    Console.Write("\n ");
-                }
-                for (int j = 0; j < length * 2 - 2; j++)
-                {
-                    if (length - i - 2 == j || i + length - 2 == j || i == length - 1)
-                    {
-                        Console.Write("*");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-            }
-            Console.WriteLine();
+            ArrayEncoder();
         }
-        public static void FibonachiNumberLessThan()
+        public static void ArrayUnpacking()
         {
-            Console.WriteLine("Enter number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int fib1 = 0;
-            int fib2 = 1;
-            Console.WriteLine(fib1);
-            Console.WriteLine(fib2);
-            for (int i = 0; i <= number; i++)
+            Console.WriteLine("Enter size of array");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[size];
+            Random rand = new Random();
+            for (int i = 0; i < array.Length; i++)
             {
-                fib1 = fib1 + fib2;
-                fib2 = fib2 + fib1;
-                if (fib1 < number)
+                array[i] = rand.Next(0, 2);
+                Console.Write(array[i]);
+            }
+            Console.WriteLine("\nResult");
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 1; j < array[i]; j++)
                 {
-                    Console.WriteLine(fib1);
+                    if (i % 2 == 0)
+                    {
+                        Console.Write(0);
+                    }
+                    else
+                    {
+                        Console.Write(1);
+                    }
                 }
-                if (fib2 < number)
+            }
+        }
+
+        public static void PerfectNumber()
+        {
+            int sum = 0;
+            for (int i = 1; i <= 1000; i++)
+            {
+                sum = 0;
+                for (int j = 1; j < i; j++)
                 {
-                    Console.WriteLine(fib2);
+                    if (i % j == 0)
+                    {
+                        sum += j;
+                    }
                 }
-                if (fib1 > number || fib2 > number)
+                if (sum == i)
                 {
+                    Console.WriteLine($"Perfect Number: {sum}");
+                }
+            }
+        }
+
+        public static void ArrayStore()
+        {
+            string[] products = new string[] { "Milk", "Apple", "Chease", "Egg" };
+            double[] prices = new double[] { 10.15, 25.30, 15.20, 10 };
+            int quantity = 0;
+            int number = 0;
+            double result = 0;
+
+            for (int i = 0; i < products.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}) {products[i]} - {prices[i]} hrn");
+            }
+
+            for (int i = 0; ; i++)
+            {
+                Console.WriteLine("Product");
+                number = Convert.ToInt32(Console.ReadLine());
+
+                if (number != 0)
+                {
+                    Console.WriteLine("Quantity");
+                    quantity = Convert.ToInt32(Console.ReadLine());
+                    result += prices[number - 1] * quantity;
+                }
+                else
+                {
+                    Console.WriteLine($"Sum: {Convert.ToDouble(result)} hrn");
                     break;
                 }
             }
         }
-        public static void FirstNumbersFibonachi()
-        { 
-            Console.WriteLine("Enter number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int fib1 = 0;
-            int fib2 = 1;
-            for (int i = 0; i<number; i++)
-            {
-                Console.WriteLine(fib1);
-                for (int j = i; j<i+1; j++)
-                {
-                    int temp = fib1;
-                    fib1 = fib2;
-                    fib2 = temp + fib2;
-                }
-            }
-        }
-        public static void SumRow()
-        {
-            Console.WriteLine("Enter number");
-            double number = Convert.ToDouble(Console.ReadLine());
-            double newNumber = 1;
-            double result = 0;
-            for (double i = 1; i <= number; i++)
-            {
-                for (double j = 1; j <= i; j++)
-                {
-                    newNumber *= -2;
-                }
-                result += (-1) * i / newNumber;
-                newNumber = 1;
-            }
-            Console.WriteLine($"Result {result}");
-        }
-        public static void BetweenNumbers()
-        {
-            bool check = true;
-            do
-            {
-                Console.WriteLine("Enter number A");
-                int numberA = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter number B");
-                int numberB = Convert.ToInt32(Console.ReadLine());
-                int sum = 0;
-                string odd = "";
-                if (numberA > numberB)
-                {
-                    Console.WriteLine("Error. A>B. Please try again.");
-                    check = false;
-                    continue;
-                }
-                for (int i = numberA + 1; i < numberB; i++)
-                {
-                    sum += i;
-                    if (i % 2 > 0)
-                    {
-                        odd += $" {i},";
-                    }
-                }
-                Console.WriteLine($"Сумма чисел между {numberA} и {numberB}: {sum}. \nНечётный значения между ними:{odd}");
 
-            } while (check == false);
-        }
-        public static void SquareLessThanNumber()
+        public static void ArrayEncoder()
         {
-            Console.WriteLine("Enter number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int result = 0;
-            for (int i = 1; i < number; i++)
+            var encryptChars = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            var cipher = new char[11] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#', '$' };
+            Console.WriteLine("Enter data");
+            var array = Console.ReadLine();
+            var result = new char[array.Length];
+            int n = 0;
+
+            for (int i = 0; i < array.Length; i++)
             {
-                result = i * i;
-                if (result < number)
+                if (char.IsDigit(array[i]))
                 {
-                    Console.WriteLine(result);
-                }
-            }
-        }
-        public static void MileageSkier()
-        {
-            double mileage = 10;
-            double result = 10;
-            int day = 1;
-            while (result <= 100)
-            {
-                mileage = mileage * 1.1;
-                result += mileage;
-                day++;
-            }
-            Console.WriteLine(day);
-        }
-        public static void SyracuseTheorem()
-        {
-            Console.WriteLine("Enter number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int iteration = 0;
-            while (number != 1)
-            {
-                if (number % 2 == 0)
-                {
-                    number = number / 2;
-                    iteration++;
+                    n = Convert.ToInt32(array[i]) - 48;
+                    result[i] = cipher[n];
                 }
                 else
                 {
-                    number = ((number * 3) + 1);
-                    iteration++;
+                    result[i] = cipher[10];
                 }
             }
-            Console.WriteLine($"In {iteration} iterations we got 1");
-        }
-        public static void ReverseNumber()
-        {
-            Console.WriteLine("Enter number");
-            string strnumbeer = Console.ReadLine();
-            int number = Convert.ToInt32(strnumbeer);
-            int n;
-            string result = "";
-            for (int i = 0; i < strnumbeer.Length; i++)
+
+            Console.WriteLine("Result: ");
+            foreach (var item in result)
             {
-                n = number % 10;
-                number /= 10;
-                result += n.ToString();
+                Console.Write(item);
             }
-            Console.WriteLine(result);
-        }
-        public static void NumeralsOfNumber()
-        {
-            Console.WriteLine("Add number");
-            string strnumbeer = Console.ReadLine();
-            int number = Convert.ToInt32(strnumbeer);
-            int n;
-            string strnewNumb = "";
-            for (int i = 0; i < strnumbeer.Length; i++)
-            {
-                n = number % 10;
-                number /= 10;
-                    strnewNumb += n.ToString();
-            }
-            int newNumb = Convert.ToInt32(strnewNumb);
-            Console.WriteLine($"Numberals in number {strnumbeer}");
-            for (int i = 0; i < strnewNumb.Length; i++)
-            {
-                n = newNumb % 10;
-                newNumb /= 10;
-                Console.WriteLine($"{n};");
-            }
-        }
-        public static void HighestDigitOfNnumber()
-        {
-            Console.WriteLine("Add number");
-            string strnumbeer = Console.ReadLine();
-            int number = Convert.ToInt32(strnumbeer);
-            int n;
-            int max=0;
-            string strnewNumb = "";
-            for (int i = 0; i < strnumbeer.Length; i++)
-            {
-                n = number % 10;
-                number /= 10;
-                if (n > max)
-                {
-                    max = n;
-                }
-            }
-            Console.WriteLine($"Highest digit of number: {max}");
-        }
-        public static void UnsignedMultiplication()
-        {
-            Console.WriteLine("Add number A");
-            int numberA = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Add number B");
-            int numberB = Convert.ToInt32(Console.ReadLine());
-            int result=0;
-            for (int i = 0; i < Math.Abs(numberB); i++)
-            {
-                result += Math.Abs(numberA);
-            }
-            if (numberA < 0 ^ numberB<0) result*=-1;
-            Console.WriteLine($"Result: {result}");
         }
     }
 }
