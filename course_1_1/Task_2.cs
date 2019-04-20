@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace course_1_1
 {
-    class Program
+    public static class Task_2
     {
-        static void Main(string[] args)
-        {
-            Task_1.PerformCalculation();
-        }
 
-       
     }
 }
