@@ -10,44 +10,54 @@ namespace course_1_1
     {
         public static void PerformConversion()
         {
-            Console.WriteLine("Enter amount of money");
-            int firstNumber = Convert.ToInt32(Console.ReadLine());
+            var moneyString = Task_2.AskForMoney();
+            decimal money = Task_2.ParseMoney(moneyString);
             Console.WriteLine("Enter currency");
             string currency = Console.ReadLine();
-            Console.WriteLine(Task_2.Conversation(firstNumber, currency));
+            Console.WriteLine(Task_2.Conversation(money, currency));
         }
 
-        private static double Conversation(int firstNumber,string currency)
+        private static string AskForMoney()
         {
-            double result = 0;
+            Console.WriteLine("Enter amount of money");
+            return Console.ReadLine();
+        }
+
+
+        private static decimal ParseMoney(string money)
+        {
+            if (decimal.TryParse(money, out decimal operand))
+            {
+                return operand;
+            }
+            else
+            {
+                throw new ArgumentException("The string cannot be parsed into double");
+            }
+        }
+
+        private static decimal Conversation(decimal firstNumber,string currency)
+        {
+            double rate = 0;
             switch (currency)
             {
                 case "rub":
-                    result = Task_2.Rub(firstNumber);
+                    rate = 0.48;
                     break;
                 case "dol":
-                    result = Task_2.Dol(firstNumber);
+                    rate = 27;
                     break;
                 case "euro":
-                    result = Task_2.Euro(firstNumber);
+                    rate = 31;
                     break;
             }
-            return result;
+
+            return Task_2.CalculationRate(firstNumber, rate);
         }
 
-        private static double Rub(int firstNumber)
+        private static decimal CalculationRate(decimal firstNumber, double rate)
         {
-            return firstNumber * 0.42;
-        }
-
-        private static double Dol(int firstNumber)
-        {
-            return firstNumber * 27;
-        }
-
-        private static double Euro(int firstNumber)
-        {
-            return firstNumber * 31;
+            return firstNumber * (decimal)rate;
         }
     }
 }
