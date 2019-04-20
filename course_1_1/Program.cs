@@ -11,6 +11,8 @@ namespace course_1_1
         static void Main(string[] args)
         {
             Task_1.PerformCalculation();
+
+            //Task_2.PerformConversion();
         }
 
        
