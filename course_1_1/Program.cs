@@ -10,19 +10,12 @@ namespace course_1_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter a radius");
-            string rstr = Console.ReadLine();
-            int.TryParse(rstr, out int r);
-            Console.WriteLine($"The square of the round {Program.PerformCalculation(r)}");
-            
-        }
+            Worker worker1 = new Worker("Иван", 25, 1000);
+            Worker worker2 = new Worker("Вася", 26, 2000);
 
-        public static decimal PerformCalculation(int r)
-        {
-            const decimal Pi = 3.14m;
-            decimal square = Pi * r * r;
-            return square;
-            
+            Console.WriteLine($"Summ of salary = {worker1.Salary + worker2.Salary}");
+
         }
+       
     }
 }
