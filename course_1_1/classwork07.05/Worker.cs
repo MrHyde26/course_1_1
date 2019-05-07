@@ -8,15 +8,35 @@ namespace course_1_1.classwork07._05
 {
     class Worker
     {
-        public string Name;
-        public int Age;
-        public int Salary;
+        public string Name { get; set; }
+        private int age;
+        public int Salary { get; set; }
 
         public Worker(string name, int age, int salary)
         {
             Name = name;
-            Age = age;
             Salary = salary;
+            Age = age;
+        }
+
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+
+            set
+            {
+                if (value > 0 && value < 101)
+                {
+                    age = value;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect Age " + Name);
+                }
+            }
         }
     }
 }
