@@ -8,8 +8,8 @@ namespace course_1_1.classwork07._05
 {
     class User
     {
-        private string Name { get; set; }
-        private int Age { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
 
         public User(string name, int age)
         {

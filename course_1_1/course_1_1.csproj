@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classwork07.05\Driver.cs" />
+    <Compile Include="classwork07.05\Student.cs" />
     <Compile Include="classwork07.05\User.cs" />
     <Compile Include="classwork07.05\Worker.cs" />
     <Compile Include="classwork07.05\Worker2.cs" />
