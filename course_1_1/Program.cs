@@ -14,6 +14,8 @@ namespace course_1_1
             Worker worker1 = new Worker("Иван", 25, 1000);
             Worker worker2 = new Worker("Вася", 26, 2000);
 
+            Console.WriteLine($"Salary1 {worker1.Salary}");
+            Console.WriteLine($"Salary2 {worker2.Salary}");
             Console.WriteLine($"Summ of salary = {worker1.Salary + worker2.Salary}");
 
         }
