@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classwork07.05\Driver.cs" />
+    <Compile Include="classwork07.05\Mammal.cs" />
     <Compile Include="classwork07.05\Student.cs" />
     <Compile Include="classwork07.05\User.cs" />
     <Compile Include="classwork07.05\Worker.cs" />

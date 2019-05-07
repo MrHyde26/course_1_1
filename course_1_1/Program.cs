@@ -32,10 +32,14 @@ namespace course_1_1
             //Student student2 = new Student("Вася", 30, 120, 1);
             //Console.WriteLine($"Student {student1.Name} age {student1.Age} grant {student1.Grant}.");
 
-            Driver driver = new Driver("Ivan", 33, 2500, 4,Category.B);
-            Console.WriteLine($"Student {driver.Name} age {driver.Age} salary {driver.Salary} category {driver.category} stag {driver.Year}.");
+            //Driver driver = new Driver("Ivan", 33, 2500, 4,Category.B);
+            //Console.WriteLine($"Student {driver.Name} age {driver.Age} salary {driver.Salary} category {driver.category} stag {driver.Year}.");
 
-
+            Mammal animal1 = new Mammal(-10);
+            Mammal animal2 = new Mammal(10);
+            int foodAmount = 22;
+            animal1.Eat(foodAmount);
+            animal2.Eat(foodAmount);
 
         }
 
