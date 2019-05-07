@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using course_1_1.classwork07._05;
 
 namespace course_1_1
 {
