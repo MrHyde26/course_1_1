@@ -45,9 +45,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskMammal\Aquatic.cs" />
+    <Compile Include="TaskMammal\Arboreal.cs" />
+    <Compile Include="TaskMammal\Arial.cs" />
+    <Compile Include="TaskMammal\Feeder.cs" />
+    <Compile Include="TaskMammal\Mammal.cs" />
+    <Compile Include="TaskMammal\Subterranean.cs" />
+    <Compile Include="TaskMammal\Terrestrial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
